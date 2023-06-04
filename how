@@ -1,0 +1,128 @@
+[33mcommit a5ca404f25b3646b59ec9fbb8349a06e558d2a74[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: kavin <kavinsubramaniam2002@gmail.com>
+Date:   Sun Jun 4 13:07:50 2023 +0530
+
+    fourth- commit
+
+[1mdiff --git a/gateways.tf b/gateways.tf[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/subnets.tf b/subnets.tf[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dd684b2[m
+[1m--- /dev/null[m
+[1m+++ b/subnets.tf[m
+[36m@@ -0,0 +1,94 @@[m
+[32m+[m[32m#public subnet 1[m
+[32m+[m[32mresource "aws_subnet" "pubsub1"{[m
+[32m+[m[32m    cidr_block = var.pubsub1cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = true[m
+[32m+[m[32m    availability_zone = "ap-south-1a"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pub1-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#public subnet 2[m
+[32m+[m[32mresource "aws_subnet" "pubsub2"{[m
+[32m+[m[32m    cidr_block = var.pubsub2cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = true[m
+[32m+[m[32m    availability_zone = "ap-south-1b"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pub2-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#private subnet 1[m
+[32m+[m[32mresource "aws_subnet" "prisub1" {[m
+[32m+[m[32m    cidr_block = var.prisub1cidr[m
+[32m+[m[32m    vpc_id=aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = false[m
+[32m+[m[32m    availability_zone = "ap-south-1b"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pri1-sk"[m
+[32m+[m[32m    }[m
+[32m+[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#private subnet 2[m
+[32m+[m[32mresource "aws_subnet" "prisub2"{[m
+[32m+[m[32m    cidr_block = var.prisub2cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = false[m
+[32m+[m[32m    availability_zone = "ap-south-1a"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pri2-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m[32m#public subnet 1[m
+[32m+[m[32mresource "aws_subnet" "pubsub1"{[m
+[32m+[m[32m    cidr_block = var.pubsub1cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = true[m
+[32m+[m[32m    availability_zone = "ap-south-1a"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pub1-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#public subnet 2[m
+[32m+[m[32mresource "aws_subnet" "pubsub2"{[m
+[32m+[m[32m    cidr_block = var.pubsub2cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = true[m
+[32m+[m[32m    availability_zone = "ap-south-1b"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pub2-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#private subnet 1[m
+[32m+[m[32mresource "aws_subnet" "prisub1" {[m
+[32m+[m[32m    cidr_block = var.prisub1cidr[m
+[32m+[m[32m    vpc_id=aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = false[m
+[32m+[m[32m    availability_zone = "ap-south-1b"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pri1-sk"[m
+[32m+[m[32m    }[m
+[32m+[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#private subnet 2[m
+[32m+[m[32mresource "aws_subnet" "prisub2"{[m
+[32m+[m[32m    cidr_block = var.prisub2cidr[m
+[32m+[m[32m    vpc_id = aws_vpc.vpc.id[m
+[32m+[m[32m    map_public_ip_on_launch = false[m
+[32m+[m[32m    availability_zone = "ap-south-1a"[m
+[32m+[m[32m    tags={[m
+[32m+[m[32m        Name="sub-pri2-sk"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/t b/t[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/terraform.tfvars b/terraform.tfvars[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5f874cb[m
+[1m--- /dev/null[m
+[1m+++ b/terraform.tfvars[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mAWS_ACCESS_KEY="AKIA3K73SNGI43IQ3H42"[m
+[32m+[m[32mAWS_SECRET_KEY="OjzfH+QpeZCuMyBI/09M42cqXdsbYx3vVSx9OM+T"[m
+[32m+[m
+[32m+[m[32mvpccidr     = "10.0.0.0/16"[m
+[32m+[m[32mpubsub1cidr = "10.0.1.0/24"[m
+[32m+[m[32mpubsub2cidr = "10.0.2.0/24"[m
+[32m+[m[32mprisub1cidr = "10.0.3.0/24"[m
+[32m+[m[32mprisub2cidr = "10.0.4.0/24"[m
+\ No newline at end of file[m

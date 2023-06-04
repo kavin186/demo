@@ -1,5 +1,5 @@
-AWS_ACCESS_KEY="AKIA3K73SNGI43IQ3H42"
-AWS_SECRET_KEY="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"
+//AWS_ACCESS_KEY=""
+//=""
 
 vpccidr     = "10.0.0.0/16"
 pubsub1cidr = "10.0.1.0/24"
